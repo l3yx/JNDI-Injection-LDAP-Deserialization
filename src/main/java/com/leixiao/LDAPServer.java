@@ -44,6 +44,7 @@ public class LDAPServer {
         @Override
         public void processSearchResult(InMemoryInterceptedSearchResult result) {
             String base = result.getRequest().getBaseDN();
+            System.out.println(base);
             Entry e = new Entry(base);
             try {
                 sendResult(result, base, e);
